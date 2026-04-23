@@ -1,0 +1,181 @@
+<mvc:View
+	controllerName="aryan.portfolio.controller.Main"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core">
+
+	<Page id="portfolioPage" showHeader="false" class="portfolioPage">
+		<content>
+
+			<!-- ═══════════════════════════════════════════
+			     HERO BANNER
+			     ═══════════════════════════════════════════ -->
+			<VBox class="portfolioHero">
+				<Title text="{portfolio>/hero/name}" level="H1" class="heroName" />
+				<Title text="{portfolio>/hero/title}" level="H4" class="heroRole sapUiSmallMarginTop" />
+				<Text text="{portfolio>/hero/bio}" wrapping="true" class="heroBio sapUiSmallMarginTop sapUiMediumMarginBottom" />
+
+				<FlexBox wrap="Wrap" class="contactRow">
+					<HBox alignItems="Center" class="contactItem sapUiSmallMarginEnd sapUiSmallMarginBottom">
+						<core:Icon src="sap-icon://email" class="sapUiTinyMarginEnd" />
+						<Text text="{portfolio>/hero/email}" class="contactText" />
+					</HBox>
+					<HBox alignItems="Center" class="contactItem sapUiSmallMarginEnd sapUiSmallMarginBottom">
+						<core:Icon src="sap-icon://phone" class="sapUiTinyMarginEnd" />
+						<Text text="{portfolio>/hero/phone}" class="contactText" />
+					</HBox>
+					<HBox alignItems="Center" class="contactItem sapUiSmallMarginEnd sapUiSmallMarginBottom">
+						<core:Icon src="sap-icon://collaborate" class="sapUiTinyMarginEnd" />
+						<Link text="{portfolio>/hero/github}" href="{portfolio>/hero/githubUrl}" target="_blank" class="heroLink" />
+					</HBox>
+					<HBox alignItems="Center" class="contactItem sapUiSmallMarginEnd sapUiSmallMarginBottom">
+						<core:Icon src="sap-icon://person-placeholder" class="sapUiTinyMarginEnd" />
+						<Link text="{portfolio>/hero/linkedin}" href="{portfolio>/hero/linkedinUrl}" target="_blank" class="heroLink" />
+					</HBox>
+					<HBox alignItems="Center" class="contactItem sapUiSmallMarginBottom">
+						<core:Icon src="sap-icon://map" class="sapUiTinyMarginEnd" />
+						<Text text="{portfolio>/hero/location}" class="contactText" />
+					</HBox>
+				</FlexBox>
+			</VBox>
+
+			<!-- ═══════════════════════════════════════════
+			     SECTION TABS
+			     ═══════════════════════════════════════════ -->
+			<IconTabBar id="mainTabBar" expandable="false" backgroundDesign="Transparent" class="portfolioTabs">
+				<items>
+
+					<!-- ─────────────────────────────
+					     EXPERIENCE TAB
+					     ───────────────────────────── -->
+					<IconTabFilter text="Experience" icon="sap-icon://history" key="experience">
+						<VBox class="tabContent">
+							<Title text="WORK EXPERIENCE" level="H6" class="sectionHeading sapUiSmallMarginBottom" />
+
+							<Panel class="experiencePanel" expandable="false" expanded="true">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="STAR Scholar – SAP Labs, Bengaluru" level="H3" />
+										<ToolbarSpacer />
+										<Label text="Aug 2025 – Present" design="Bold" class="periodLabel" />
+									</Toolbar>
+								</headerToolbar>
+
+								<VBox class="rotationBox">
+									<HBox alignItems="Center" class="sapUiSmallMarginBottom">
+										<core:Icon src="sap-icon://rotate" class="rotationIcon sapUiSmallMarginEnd" />
+										<Title text="First Rotation – S4 Hana PrismConnector" level="H4" class="rotationTitle" />
+										<Label text="  ·  Sep 2025 – Mar 2026" class="sapUiSmallMarginBegin" />
+									</HBox>
+
+									<Text text="PrismConnector is part of SAP Ariba Spend Control Tower, using CAP Java for backend and SAP UI5 for frontend, deployed on SAP BTP." wrapping="true" class="sapUiSmallMarginBottom" />
+
+									<List items="{portfolio>/experience/0/highlights}" showSeparators="None" mode="None">
+										<CustomListItem class="highlightItem">
+											<HBox alignItems="Start" class="highlightContent">
+												<core:Icon src="{portfolio>icon}" class="highlightIcon" />
+												<VBox class="highlightText">
+													<Title text="{portfolio>area}" level="H5" class="highlightArea" />
+													<Text text="{portfolio>text}" wrapping="true" class="sapUiTinyMarginTop" />
+												</VBox>
+											</HBox>
+										</CustomListItem>
+									</List>
+								</VBox>
+							</Panel>
+						</VBox>
+					</IconTabFilter>
+
+					<!-- ─────────────────────────────
+					     SKILLS TAB
+					     ───────────────────────────── -->
+					<IconTabFilter text="Skills" icon="sap-icon://technical-object" key="skills">
+						<VBox class="tabContent">
+							<Title text="SKILLS &amp; TECHNOLOGIES" level="H6" class="sectionHeading sapUiSmallMarginBottom" />
+
+							<List items="{portfolio>/skillGroups}" showSeparators="None" mode="None">
+								<CustomListItem class="skillGroupItem">
+									<VBox class="skillGroup">
+										<HBox alignItems="Center" class="sapUiSmallMarginBottom">
+											<core:Icon src="{portfolio>icon}" class="skillGroupIcon sapUiTinyMarginEnd" />
+											<Title text="{portfolio>title}" level="H4" />
+										</HBox>
+										<FlexBox wrap="Wrap" items="{portfolio>skills}">
+											<ObjectStatus text="{portfolio>name}" state="{portfolio>state}" class="skillChip sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+										</FlexBox>
+									</VBox>
+								</CustomListItem>
+							</List>
+						</VBox>
+					</IconTabFilter>
+
+					<!-- ─────────────────────────────
+					     PROJECTS TAB
+					     ───────────────────────────── -->
+					<IconTabFilter text="Projects" icon="sap-icon://product" key="projects">
+						<VBox class="tabContent">
+							<Title text="PROJECTS" level="H6" class="sectionHeading sapUiSmallMarginBottom" />
+
+							<List items="{portfolio>/projects}" showSeparators="None" mode="None">
+								<CustomListItem class="projectItem">
+									<VBox class="projectCard">
+										<HBox alignItems="Center" class="sapUiSmallMarginBottom">
+											<Title text="{portfolio>name}" level="H3" />
+											<Link text="{portfolio>linkText}" href="{portfolio>linkUrl}" target="_blank" class="projectLink sapUiSmallMarginBegin" emphasized="true" />
+										</HBox>
+
+										<Text text="{portfolio>description}" wrapping="true" class="sapUiSmallMarginBottom" />
+
+										<HBox alignItems="Center" class="sapUiTinyMarginBottom">
+											<core:Icon src="sap-icon://tag" class="tagIcon sapUiTinyMarginEnd" />
+											<Label text="Skills used" design="Bold" />
+										</HBox>
+										<FlexBox wrap="Wrap" items="{portfolio>skills}">
+											<ObjectStatus text="{portfolio>name}" state="{portfolio>state}" class="skillChip sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+										</FlexBox>
+									</VBox>
+								</CustomListItem>
+							</List>
+						</VBox>
+					</IconTabFilter>
+
+					<!-- ─────────────────────────────
+					     EDUCATION TAB
+					     ───────────────────────────── -->
+					<IconTabFilter text="Education" icon="sap-icon://learning-assistant" key="education">
+						<VBox class="tabContent">
+							<Title text="ACADEMIC QUALIFICATIONS" level="H6" class="sectionHeading sapUiSmallMarginBottom" />
+
+							<List items="{portfolio>/education}" showSeparators="None" mode="None">
+								<CustomListItem class="eduItem">
+									<HBox justifyContent="SpaceBetween" alignItems="Start" class="eduCard">
+										<VBox>
+											<Title text="{portfolio>degree}" level="H4" />
+											<Text text="{portfolio>institution}" wrapping="true" class="sapUiTinyMarginTop" />
+											<Label text="{portfolio>period}" class="sapUiTinyMarginTop" />
+										</VBox>
+										<ObjectStatus text="{portfolio>cgpa}" state="Success" inverted="false" class="cgpaStatus sapUiSmallMarginBegin" />
+									</HBox>
+								</CustomListItem>
+							</List>
+
+							<Title text="CERTIFICATIONS" level="H6" class="sectionHeading sapUiMediumMarginTop sapUiSmallMarginBottom" />
+
+							<List items="{portfolio>/certifications}" showSeparators="None" mode="None">
+								<StandardListItem
+									title="{portfolio>name}"
+									description="{portfolio>issuer}"
+									icon="sap-icon://badge"
+									class="certItem" />
+							</List>
+						</VBox>
+					</IconTabFilter>
+
+				</items>
+			</IconTabBar>
+
+		</content>
+	</Page>
+
+</mvc:View>

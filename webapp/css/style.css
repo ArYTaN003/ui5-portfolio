@@ -1,0 +1,307 @@
+/* ============================================================
+   BASE PAGE
+   ============================================================ */
+.portfolioPage {
+    background-color: var(--sapBackgroundColor);
+}
+
+/* ============================================================
+   HERO BANNER  (explicit dark gradient — always visible)
+   ============================================================ */
+.portfolioHero {
+    background: linear-gradient(135deg, #0a3d6b 0%, #0854a0 100%);
+    padding: 3rem 2.5rem 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero text sits on the dark gradient — force white so it's always readable */
+.portfolioHero .sapMTitle,
+.portfolioHero .sapMText,
+.portfolioHero .sapMLbl {
+    color: #ffffff !important;
+}
+
+.portfolioHero .sapUiIcon {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 1rem;
+}
+
+.heroName .sapMTitleText {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+}
+
+.heroRole .sapMTitleText {
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    opacity: 0.9;
+}
+
+.heroBio.sapMText {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    max-width: 720px;
+    opacity: 0.88;
+}
+
+.contactRow {
+    gap: 0.25rem 1.5rem;
+}
+
+.contactItem .sapMText {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.875rem;
+}
+
+/* Links in the hero contact row */
+.heroLink.sapMLnk,
+.heroLink.sapMLnk:visited {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.875rem;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+}
+
+.heroLink.sapMLnk:hover {
+    color: #ffffff !important;
+    text-decoration-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================================
+   ICON TAB BAR  (let theme color the bar; just add shadow)
+   ============================================================ */
+.portfolioTabs.sapMITB {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ============================================================
+   TAB CONTENT WRAPPER
+   ============================================================ */
+.tabContent {
+    padding: 1.75rem 2rem;
+    max-width: 960px;
+}
+
+/* ============================================================
+   EXPERIENCE SECTION
+   ============================================================ */
+.experiencePanel.sapMPanel {
+    border-radius: 8px;
+    border: 1px solid var(--sapContent_BorderColor);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.experiencePanel .sapMPanelHdr {
+    background-color: var(--sapContent_ForegroundColor);
+    border-bottom: 2px solid var(--sapHighlightColor);
+}
+
+.periodLabel.sapMLbl {
+    color: var(--sapHighlightColor) !important;
+    font-weight: 600;
+}
+
+.rotationBox {
+    padding: 1.25rem 1.5rem;
+}
+
+.rotationTitle .sapMTitleText {
+    color: var(--sapTextColor) !important;
+    font-weight: 600;
+}
+
+/* Highlight items */
+.highlightItem.sapMLIB {
+    padding: 0;
+    background: transparent;
+    border: none;
+    margin-bottom: 0.75rem;
+}
+
+.highlightContent {
+    background: var(--sapContent_ForegroundColor);
+    border-left: 3px solid var(--sapHighlightColor);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    gap: 0.875rem;
+}
+
+.highlightIcon.sapUiIcon {
+    font-size: 1.25rem !important;
+    color: var(--sapHighlightColor) !important;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+}
+
+.highlightArea .sapMTitleText {
+    font-size: 0.9375rem !important;
+    font-weight: 600;
+    color: var(--sapTextColor) !important;
+}
+
+.highlightText .sapMText {
+    color: var(--sapContent_LabelColor) !important;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   SKILLS SECTION
+   ============================================================ */
+.skillGroupItem.sapMLIB {
+    padding: 0;
+    background: transparent;
+    border: none;
+    margin-bottom: 1.25rem;
+}
+
+.skillGroup {
+    background: var(--sapContent_ForegroundColor);
+    border: 1px solid var(--sapContent_BorderColor);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+.skillGroup .sapMTitle .sapMTitleText {
+    color: var(--sapTextColor) !important;
+}
+
+.skillGroupIcon.sapUiIcon {
+    font-size: 1.1rem !important;
+    color: var(--sapHighlightColor) !important;
+}
+
+.skillChip.sapMObjStatus {
+    border-radius: 20px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8125rem !important;
+    border: 1px solid currentColor;
+    background: transparent;
+}
+
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
+.projectItem.sapMLIB {
+    padding: 0;
+    background: transparent;
+    border: none;
+    margin-bottom: 1.25rem;
+}
+
+.projectCard {
+    background: var(--sapContent_ForegroundColor);
+    border: 1px solid var(--sapContent_BorderColor);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.2s ease;
+}
+
+.projectCard:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.projectCard .sapMTitle .sapMTitleText {
+    color: var(--sapHighlightColor) !important;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.projectCard .sapMText {
+    color: var(--sapContent_LabelColor) !important;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+
+.projectBadge.sapMObjStatus {
+    border-radius: 20px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.75rem !important;
+}
+
+/* Project link (Live / GitHub) */
+.projectLink.sapMLnk {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--sapHighlightColor);
+    border-radius: 20px;
+    padding: 0.15rem 0.75rem;
+}
+
+.projectLink.sapMLnk:hover {
+    background: color-mix(in srgb, var(--sapHighlightColor) 15%, transparent);
+}
+
+/* ============================================================
+   EDUCATION SECTION
+   ============================================================ */
+.eduItem.sapMLIB {
+    padding: 0;
+    background: transparent;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.eduCard {
+    background: var(--sapContent_ForegroundColor);
+    border: 1px solid var(--sapContent_BorderColor);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+.eduCard .sapMTitle .sapMTitleText {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--sapTextColor) !important;
+}
+
+.eduCard .sapMText {
+    font-size: 0.9rem;
+    color: var(--sapContent_LabelColor) !important;
+}
+
+.eduCard .sapMLbl {
+    color: var(--sapContent_LabelColor) !important;
+}
+
+.cgpaStatus.sapMObjStatus {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.certItem.sapMLIB {
+    border-radius: 6px;
+    background: var(--sapContent_ForegroundColor);
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--sapContent_BorderColor);
+}
+
+/* ============================================================
+   MISC ICONS & SECTION HEADINGS
+   ============================================================ */
+.rotationIcon.sapUiIcon {
+    color: var(--sapHighlightColor) !important;
+    font-size: 1rem;
+}
+
+.tagIcon.sapUiIcon {
+    color: var(--sapHighlightColor) !important;
+    font-size: 0.875rem;
+}
+
+.sectionHeading .sapMTitleText {
+    color: var(--sapContent_LabelColor) !important;
+    font-weight: 700;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    font-size: 0.72rem !important;
+    border-bottom: 2px solid var(--sapHighlightColor);
+    padding-bottom: 0.4rem;
+    display: inline-block;
+}
